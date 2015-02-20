@@ -1,0 +1,164 @@
+.pointer {
+  cursor:pointer;
+}
+
+a, .btn-link {
+  cursor:pointer;
+  color: @linkColor;
+  /*
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  */
+}
+//allow using anchor tags JUST to make them clickable but do NOT style them any differently than divs
+.a-div {
+  display:block;
+  color:inherit;
+}
+//color version that just makes the display block
+.a-block {
+  display:block;
+}
+
+.btn-base() {
+  display:inline-block;
+  //border-radius:4px;
+  cursor:pointer;
+  text-align:center;
+  color: @white;
+  text-transform: uppercase;
+  //&:active {
+  //  background: darken(#fff, 5%);
+  //}
+  .user-select(none);
+}
+
+// Block level buttons (full width buttons)
+.btn-block {
+  display: block;
+  padding: 11px 11px;
+  margin: 10px 0px;
+  font-size: 16px;
+  max-width:100%;
+  width:100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"].btn-block, .btn-block.jrg-forminput-submit {
+  max-width:100%;
+}
+/* overwrite wide/wider/widest form margin-left for block (full width) buttons */
+/*
+.jrg-forminput-form.wide button[type="submit"].btn-block, .jrg-forminput-form.wider button[type="submit"].btn-block, .jrg-forminput-form.widest button[type="submit"].btn-block, .jrg-forminput-form.wide .btn-block.jrg-forminput-submit, .jrg-forminput-form.wider .btn-block.jrg-forminput-submit, .jrg-forminput-form.widest .btn-block.jrg-forminput-submit
+*/
+.jrg-forminput-form.wide .btn.btn-block, .jrg-forminput-form.wider .btn.btn-block, .jrg-forminput-form.widest .btn.btn-block
+{
+  margin-left:0;
+}
+
+
+//actual button styles and classes
+.btn {
+  .btn-base();
+  padding:5px 9px;
+  min-width:75px;
+  background: @grayLighter;
+  border: 1px solid @grayDarker;
+  color: @grayDarker;
+}
+.btn:hover {
+  
+}
+
+
+//from Twitter Bootstrap
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  padding: @paddingLarge;
+  font-size: @fontSizeLarge;
+  //.border-radius(@borderRadiusLarge);
+}
+.btn-large [class^="icon-"], .btn-large [class^="fa-"],
+.btn-large [class*=" icon-"], .btn-large [class*=" fa-"] {
+  margin-top: 4px;
+}
+
+// Small
+.btn-small {
+  padding: @paddingSmall;
+  font-size: @fontSizeSmall;
+  //.border-radius(@borderRadiusSmall);
+  min-width:0;
+}
+.btn-small [class^="icon-"], .btn-small [class^="fa-"],
+.btn-small [class*=" icon-"], .btn-small [class*=" fa-"] {
+  margin-top: 0;
+}
+.btn-mini [class^="icon-"], .btn-mini [class^="fa-"]
+.btn-mini [class*=" icon-"], .btn-mini [class*=" fa-"] {
+  margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+  padding: @paddingMini;
+  font-size: @fontSizeMini;
+  //.border-radius(@borderRadiusSmall);
+  min-width:0;
+}
+//end: from Twitter Bootstrap
+
+
+.btn-primary {
+  .btn-base();
+  background: @green;
+  border:solid 1px @green;
+}
+.btn-primary:hover {
+  
+}
+.btn-warning {
+  .btn-base();
+  background: @warningText;
+  border:solid 1px @warningText;
+}
+.btn-warning:hover {
+  
+}
+.btn-danger {
+  .btn-base();
+  background: @errorText;
+  border:solid 1px @errorText;
+}
+.btn-danger:hover {
+  
+}
+.btn-success {
+  .btn-base();
+  background: @green;
+  border:solid 1px @green;
+}
+.btn-success:hover {
+  
+}
+.btn-info {
+  .btn-base();
+  background: @infoText;
+  border:solid 1px @infoText;
+}
+.btn-info:hover {
+  
+}
+/*
+.btn-inverse {
+  .btn-base();
+  .background-image(linear-gradient(180deg, #444444, #222222));
+  border:solid 1px #222222;
+}
+.btn-inverse:hover {
+  .background-image(linear-gradient(0deg, #444444, #222222));
+}
+*/
