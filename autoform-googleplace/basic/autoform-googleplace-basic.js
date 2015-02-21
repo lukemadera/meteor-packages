@@ -110,6 +110,11 @@ if(Meteor.isClient) {
       else {
         return "";
       }
+    },
+    optsGoogleplace: function() {
+      return {
+        // type: 'standard'
+      }
     }
   });
 }
