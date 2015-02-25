@@ -57,6 +57,9 @@ Meteor.methods({
         }
       }
     });
+  },
+  deleteAllProperties: function(params) {
+    PropertiesCollection.remove({});
   }
 });
 
@@ -113,8 +116,15 @@ if(Meteor.isClient) {
     },
     optsGoogleplace: function() {
       return {
-        // type: 'standard'
+        // type: 'googleUI',
+        // stopTimeoutOnKeyup: false
       }
+    }
+  });
+
+  Template.autoformGoogleplaceBasic.events({
+    'click .autoform-googleplace-basic-delete': function(evt, template) {
+      Meteor.call("deleteAllProperties", {});
     }
   });
 }
