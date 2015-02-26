@@ -13,3 +13,6 @@ mquandalle:bower
 momentjs:moment
 lukemadera:autoform-pikaday
 lukemadera:autoform-googleplace
+cfs:standard-packages
+cfs:filesystem
+cfs:autoform
