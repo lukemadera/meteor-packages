@@ -1,13 +1,21 @@
 <template name="autoformPikadayBasic">
-  {{curVal}}
-  <br />
-  {{#autoForm collection="AFPikadayCollection" doc=afPikaday id="afPikadayForm" type="method" meteormethod="saveDate"}}
-    {{> afQuickField name="text1"}}
-    {{> afQuickField type="pikaday" name="dueDate" opts=optsPikaday}}
-    <button type="submit" class="btn btn-primary">Go</button>
-  {{/autoForm}}
+  <div class='padding'>
+    {{curVal}}
+    <br />
 
-  {{#each afPikadays}}
-    <a class='a-div' href='/af-pikaday-basic?docId={{_id}}'>{{dueDate}}</a>
-  {{/each}}
+    {{#autoForm collection="AFPikadayCollection" doc=afPikaday id="afPikadayForm" type="method" meteormethod="saveDate"}}
+      {{> afQuickField name="text1"}}
+      {{> afQuickField type="pikaday" name="dueDateTime" opts=optsPikaday}}
+      {{> afQuickField type="pikaday" name="dueDate" opts=optsPikadayNoTime}}
+      <button type="submit" class="btn btn-primary">Go</button>
+    {{/autoForm}}
+
+    <div class='margin-tb'>
+      <div class='btn btn-danger btn-small autoform-pikaday-basic-delete'>Delete All</div>
+    </div>
+
+    {{#each afPikadays}}
+      <a class='a-div' href='/af-pikaday-basic?docId={{_id}}'>{{dueDateTime}} | {{dueDate}}</a>
+    {{/each}}
+  </div>
 </template>

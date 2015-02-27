@@ -1,6 +1,8 @@
 <template name="autoformGoogleplaceBasic">
   <div class='autoform-googleplace-basic-cont padding-tb'>
     {{propertyAddress}}
+    <br />
+    
     {{#autoForm collection="PropertiesCollection" doc=property id="propertyAddressForm" type="method" meteormethod="savePropertyAddress"}}
       {{> afQuickField type="googleplace" name="address" label=false placeholder="Enter the Property Address" opts=optsGoogleplace }}
       <button type="submit" class="btn btn-primary">Go</button>

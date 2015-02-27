@@ -1,3 +1,8 @@
+/**
+http://stackoverflow.com/questions/18485883/how-to-upload-any-type-of-file-in-phonegap-and-jquery-mobile
+http://stackoverflow.com/questions/26773399/cordova-native-file-chooser-plugin-for-android-is-not-working*
+*/
+
 SimpleSchema.debug =true;   //TESTING
 
 AFTestSchema =new SimpleSchema({
