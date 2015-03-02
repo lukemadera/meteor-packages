@@ -9,6 +9,14 @@ AFDatetimepickerSchema =new SimpleSchema({
     type: String,
     optional: true
   },
+  dueDateTime2: {
+    type: String,
+    optional: true
+  },
+  dueDate2: {
+    type: String,
+    optional: true
+  },
   text1: {
     type: String,
     optional: true
