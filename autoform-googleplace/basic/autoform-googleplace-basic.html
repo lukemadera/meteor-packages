@@ -3,7 +3,7 @@
     {{propertyAddress}}
     <br />
     
-    {{#autoForm collection="PropertiesCollection" doc=property id="propertyAddressForm" type="method" meteormethod="savePropertyAddress"}}
+    {{#autoForm collection="PropertiesCollection" doc=property id="propertyAddressForm" type=afMethod meteormethod="savePropertyAddress"}}
       {{> afQuickField type="googleplace" name="address" label=false placeholder="Enter the Property Address" opts=optsGoogleplace }}
       <button type="submit" class="btn btn-primary">Go</button>
     {{/autoForm}}
@@ -13,7 +13,9 @@
     </div>
 
     {{#each properties}}
-      <a class='a-div' href='/af-googleplace-basic?propertyId={{_id}}'>{{address.fullAddress}}</a>
+      <div>
+        <a href='/af-googleplace-basic?propertyId={{_id}}'>{{address.fullAddress}}</a>
+      </div>
     {{/each}}
   </div>
 </template>

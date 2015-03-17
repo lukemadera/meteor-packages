@@ -31,32 +31,18 @@ Files.allow({
   fetch: null
 });
 
-/*
-if(Meteor.isClient) {
-  AutoForm.addHooks(
-    ["afTestForm"],
-    {
-      before   : {
-        saveTestDoc: CfsAutoForm.Hooks.beforeInsert
-      },
-      after    : {
-        saveTestDoc: CfsAutoForm.Hooks.afterInsert
-      }
-    }
-  );
-}
-*/
-
 Meteor.methods({
-  saveTestDoc: function(doc, modifier, docId) {
+  saveTestDoc: function(doc, docId) {
     console.log(doc); //TESTING
-    // check(doc, PropertySchema);    //@todo - add back in
-    AFTestSchema.clean(doc);
 
     if(docId) {
+      var modifier =doc;
       AFTestCollection.update({_id:docId}, modifier);
     }
     else {
+      // check(doc, PropertySchema);    //@todo - add back in
+      AFTestSchema.clean(doc);
+
       AFTestCollection.insert(doc, function(error, result) {
         if(Meteor.isClient) {
           if(!error && result) {
@@ -86,6 +72,14 @@ if(Meteor.isClient) {
       }
       else {
         return {}
+      }
+    },
+    afMethod: function() {
+      if(this.docId) {
+        return 'method-update';
+      }
+      else {
+        return 'method';
       }
     },
     afTests: function() {

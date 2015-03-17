@@ -3,7 +3,7 @@
     {{curVal}}
     <br />
 
-    {{#autoForm collection="AFDatetimepickerCollection" doc=afDatetimepicker id="afDatetimepickerForm" type="method" meteormethod="saveDatetimepicker"}}
+    {{#autoForm collection="AFDatetimepickerCollection" doc=afDatetimepicker id="afDatetimepickerForm" type=afMethod meteormethod="saveDatetimepicker"}}
       {{> afQuickField name="text1"}}
       {{> afQuickField type="datetimepicker" name="dueDateTime" opts=optsDatetimepicker}}
       {{> afQuickField type="datetimepicker" name="dueDate" opts=optsDatetimepickerNoTime}}
@@ -17,7 +17,9 @@
     </div>
 
     {{#each afDatetimepickers}}
-      <a class='a-div' href='/af-datetimepicker-basic?docId={{_id}}'>{{dueDateTime}} | {{dueDate}}</a>
+      <div>
+        <a href='/af-datetimepicker-basic?docId={{_id}}'>{{text1}} | {{dueDateTime}} | {{dueDate}}</a>
+      </div>
     {{/each}}
   </div>
 </template>

@@ -19,15 +19,19 @@ AFPikadayCollection =new Mongo.Collection("afPikaday");
 AFPikadayCollection.attachSchema(AFPikadaySchema);
 
 Meteor.methods({
-  saveDate: function(doc, modifier, docId) {
+  saveDate: function(doc, docId) {
     // console.log(doc); //TESTING
-    // check(doc, PropertySchema);    //@todo - add back in
-    AFPikadaySchema.clean(doc);
 
     if(docId) {
+      console.log('update');    //TESTING
+      var modifier =doc;
       AFPikadayCollection.update({_id:docId}, modifier);
     }
     else {
+      console.log('insert');    //TESTING
+      // check(doc, PropertySchema);    //@todo - add back in
+      AFPikadaySchema.clean(doc);
+
       AFPikadayCollection.insert(doc, function(error, result) {
         if(Meteor.isClient) {
           if(!error && result) {
@@ -60,6 +64,14 @@ if(Meteor.isClient) {
       }
       else {
         return {}
+      }
+    },
+    afMethod: function() {
+      if(this.docId) {
+        return 'method-update';
+      }
+      else {
+        return 'method';
       }
     },
     afPikadays: function() {

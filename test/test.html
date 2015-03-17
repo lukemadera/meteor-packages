@@ -1,13 +1,15 @@
 <template name="autoformTest">
   {{curVal}}
   <br />
-  {{#autoForm collection="AFTestCollection" doc=afTest id="afTestForm" type="method" meteormethod="saveTestDoc"}}
+  {{#autoForm collection="AFTestCollection" doc=afTest id="afTestForm" type=afMethod meteormethod="saveTestDoc"}}
     {{> afQuickField name="text1"}}
     {{> afQuickField name="file1" class="autoform-test-file-input" type="cfs-file" collection="files"}}
     <button type="submit" class="btn btn-primary">Go</button>
   {{/autoForm}}
 
   {{#each afTests}}
-    <a class='a-div' href='/af-test?docId={{_id}}'>{{text1}}</a>
+    <div>
+      <a href='/af-test?docId={{_id}}'>{{text1}}</a>
+    </div>
   {{/each}}
 </template>

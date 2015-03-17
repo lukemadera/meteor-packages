@@ -27,15 +27,17 @@ AFDatetimepickerCollection =new Mongo.Collection("afDatetimepicker");
 AFDatetimepickerCollection.attachSchema(AFDatetimepickerSchema);
 
 Meteor.methods({
-  saveDatetimepicker: function(doc, modifier, docId) {
+  saveDatetimepicker: function(doc, docId) {
     // console.log(doc); //TESTING
-    // check(doc, PropertySchema);    //@todo - add back in
-    AFDatetimepickerSchema.clean(doc);
 
     if(docId) {
+      var modifier =doc;
       AFDatetimepickerCollection.update({_id:docId}, modifier);
     }
     else {
+      // check(doc, PropertySchema);    //@todo - add back in
+      AFDatetimepickerSchema.clean(doc);
+
       AFDatetimepickerCollection.insert(doc, function(error, result) {
         if(Meteor.isClient) {
           if(!error && result) {
@@ -68,6 +70,14 @@ if(Meteor.isClient) {
       }
       else {
         return {}
+      }
+    },
+    afMethod: function() {
+      if(this.docId) {
+        return 'method-update';
+      }
+      else {
+        return 'method';
       }
     },
     afDatetimepickers: function() {

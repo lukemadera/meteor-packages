@@ -44,7 +44,7 @@ PropertiesCollection =new Mongo.Collection("properties");
 PropertiesCollection.attachSchema(PropertySchema);
 
 Meteor.methods({
-  savePropertyAddress: function(doc, modifier, docId) {
+  savePropertyAddress: function(doc, docId) {
     //@todo - handle update too (not just insert)
     //@todo - fix / add this back in - the check is failing right now and not sure why..
     // check(doc, PropertySchema);
@@ -101,6 +101,14 @@ if(Meteor.isClient) {
       else {
         // console.log('no prop'); //TESTING
         return {}
+      }
+    },
+    afMethod: function() {
+      if(this.propertyId) {
+        return 'method-update';
+      }
+      else {
+        return 'method';
       }
     },
     properties: function() {

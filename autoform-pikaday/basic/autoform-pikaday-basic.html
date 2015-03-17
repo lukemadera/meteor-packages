@@ -3,7 +3,7 @@
     {{curVal}}
     <br />
 
-    {{#autoForm collection="AFPikadayCollection" doc=afPikaday id="afPikadayForm" type="method" meteormethod="saveDate"}}
+    {{#autoForm collection="AFPikadayCollection" doc=afPikaday id="afPikadayForm" type=afMethod meteormethod="saveDate"}}
       {{> afQuickField name="text1"}}
       {{> afQuickField type="pikaday" name="dueDateTime" opts=optsPikaday}}
       {{> afQuickField type="pikaday" name="dueDate" opts=optsPikadayNoTime}}
@@ -15,7 +15,9 @@
     </div>
 
     {{#each afPikadays}}
-      <a class='a-div' href='/af-pikaday-basic?docId={{_id}}'>{{dueDateTime}} | {{dueDate}}</a>
+      <div>
+        <a href='/af-pikaday-basic?docId={{_id}}'>{{text1}} | {{dueDateTime}} | {{dueDate}}</a>
+      </div>
     {{/each}}
   </div>
 </template>
