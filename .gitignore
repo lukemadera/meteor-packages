@@ -1,0 +1,7 @@
+*.DS_Store
+npm-debug.log
+
+# symlink packages
+packages/lukemadera_autoform-googleplace
+packages/lukemadera_autoform-pikaday
+packages/notorii_autoform-datetimepicker
