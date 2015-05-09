@@ -17,3 +17,4 @@ cfs:standard-packages
 cfs:filesystem
 cfs:autoform
 notorii:autoform-datetimepicker
+lukemadera:social-share
