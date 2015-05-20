@@ -125,7 +125,10 @@ if(Meteor.isClient) {
     optsGoogleplace: function() {
       return {
         // type: 'googleUI',
-        // stopTimeoutOnKeyup: false
+        // stopTimeoutOnKeyup: false,
+        // googleOptions: {
+        //   componentRestrictions: { country:'us' }
+        // }
       }
     }
   });
