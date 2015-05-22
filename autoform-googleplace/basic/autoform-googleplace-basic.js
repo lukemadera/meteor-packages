@@ -34,8 +34,8 @@ AddressSchema =new SimpleSchema({
 });
 
 PropertySchema =new SimpleSchema({
-  address: {
-    type: AddressSchema,
+  addresses: {
+    type: [AddressSchema],
     optional: true
   }
 });
@@ -45,18 +45,21 @@ PropertiesCollection.attachSchema(PropertySchema);
 
 Meteor.methods({
   savePropertyAddress: function(doc, docId) {
-    //@todo - handle update too (not just insert)
-    //@todo - fix / add this back in - the check is failing right now and not sure why..
-    // check(doc, PropertySchema);
-    PropertySchema.clean(doc);
+    if(docId) {
+      var modifier =doc;
+      PropertiesCollection.update({_id:docId}, modifier);
+    }
+    else {
+      PropertySchema.clean(doc);
 
-    PropertiesCollection.insert(doc, function(error, result) {
-      if(Meteor.isClient) {
-        if(!error && result) {
-          // console.log('success');
+      PropertiesCollection.insert(doc, function(error, result) {
+        if(Meteor.isClient) {
+          if(!error && result) {
+            // console.log('success');
+          }
         }
-      }
-    });
+      });
+    }
   },
   deleteAllProperties: function(params) {
     PropertiesCollection.remove({});
@@ -129,6 +132,15 @@ if(Meteor.isClient) {
         // googleOptions: {
         //   componentRestrictions: { country:'us' }
         // }
+      }
+    },
+    optsGoogleplace2: function() {
+      return {
+        // type: 'googleUI',
+        // stopTimeoutOnKeyup: false,
+        googleOptions: {
+          componentRestrictions: { country:'us' }
+        }
       }
     }
   });
