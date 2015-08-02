@@ -41,6 +41,10 @@ PropertySchema =new SimpleSchema({
   addresses: {
     type: [AddressSchema],
     optional: true
+  },
+  textOne: {
+    type: 'String',
+    optional: true
   }
 });
 
@@ -152,6 +156,11 @@ if(Meteor.isClient) {
   Template.autoformGoogleplaceBasic.events({
     'click .autoform-googleplace-basic-delete': function(evt, template) {
       Meteor.call("deleteAllProperties", {});
+    },
+    //testing (logging on any keyup) AutoForm.getFieldValue
+    'keyup': function(evt, template) {
+      console.log(AutoForm.getFieldValue('textOne', 'propertyAddressForm'), 
+        AutoForm.getFieldValue('addresses.0', 'propertyAddressForm'));
     }
   });
 }

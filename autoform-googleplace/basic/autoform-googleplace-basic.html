@@ -6,6 +6,7 @@
     {{#autoForm collection="PropertiesCollection" doc=property id="propertyAddressForm" type=afMethod meteormethod="savePropertyAddress"}}
       {{> afQuickField type="googleplace" name="addresses.0" label=false placeholder="Enter the Property Address" opts=optsGoogleplace }}
       {{> afQuickField type="googleplace" name="addresses.1" label=false placeholder="Enter the Property Address" opts=optsGoogleplace2 }}
+      {{> afQuickField type="text" name="textOne" placeholder="Some text" }}
       <button type="submit" class="btn btn-primary">Go</button>
     {{/autoForm}}
 
