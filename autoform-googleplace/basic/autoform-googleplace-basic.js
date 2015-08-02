@@ -12,6 +12,10 @@ AddressSchema =new SimpleSchema({
     type: Number,
     decimal: true
   },
+  geometry: {
+    type: Object,
+    blackbox: true
+  },
   street: {
     type: String,
     max: 100
