@@ -147,6 +147,7 @@ if(Meteor.isClient) {
         // type: 'googleUI',
         // stopTimeoutOnKeyup: false,
         googleOptions: {
+          types: ['(cities)'],
           componentRestrictions: { country:'us' }
         }
       }
