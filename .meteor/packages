@@ -4,12 +4,10 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 aldeed:autoform
 aldeed:collection2
 iron:router
 less
-mquandalle:bower
 momentjs:moment
 lukemadera:autoform-pikaday
 lukemadera:autoform-googleplace
@@ -18,3 +16,18 @@ cfs:filesystem
 cfs:autoform
 notorii:autoform-datetimepicker
 lukemadera:social-share
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+fortawesome:fontawesome

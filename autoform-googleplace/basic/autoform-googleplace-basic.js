@@ -16,6 +16,9 @@ AddressSchema =new SimpleSchema({
     type: Object,
     blackbox: true
   },
+  placeId: {
+    type: String
+  },
   street: {
     type: String,
     max: 100
