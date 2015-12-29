@@ -4,9 +4,16 @@ if(Meteor.isClient) {
       var opts ={
         facebook: true,
         twitter: true,
-        pinterest: false,
+        pinterest: true,
+        facebookMessage: true,
+        gmail: true,
+        email: true,
+        linkedIn: true,
         shareData: {
-          url: 'http://google.com'
+          url: 'http://google.com',
+          facebookAppId: '195380783916970',
+          subject: 'test subject',
+          redirectUrl: 'http://localhost:3000/test'
         }
       };
       return opts;
@@ -15,9 +22,12 @@ if(Meteor.isClient) {
       var opts ={
         facebook: true,
         twitter: true,
-        pinterest: true,
+        pinterest: false,
         shareData: {
           url: 'http://yahoo.com'
+        },
+        buttonHtml: {
+          twitter: 'Twitter'
         }
       };
       return opts;
