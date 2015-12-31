@@ -1,6 +1,9 @@
-aldeed:autoform@5.7.1
-aldeed:collection2@2.5.0
-aldeed:simple-schema@1.3.3
+aldeed:autoform@5.8.1
+aldeed:collection2@2.8.0
+aldeed:collection2-core@1.0.0
+aldeed:schema-deny@1.0.1
+aldeed:schema-index@1.0.1
+aldeed:simple-schema@1.5.3
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
@@ -42,7 +45,7 @@ ecmascript@0.1.6
 ecmascript-runtime@0.2.6
 ejson@1.0.7
 fastclick@1.0.7
-fortawesome:fontawesome@4.4.0_1
+fortawesome:fontawesome@4.5.0
 geojson-utils@1.0.4
 hot-code-push@1.0.0
 html-tools@1.0.5
@@ -64,7 +67,8 @@ livedata@1.0.15
 logging@1.0.8
 lukemadera:autoform-googleplace@1.0.7
 lukemadera:autoform-pikaday@1.0.0
-lukemadera:social-share@1.1.0
+lukemadera:social-share@1.2.0
+mdg:validation-error@0.2.0
 meteor@1.1.10
 meteor-base@1.0.1
 minifiers@1.1.7
