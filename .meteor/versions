@@ -67,6 +67,7 @@ livedata@1.0.15
 logging@1.0.8
 lukemadera:autoform-googleplace@1.0.7
 lukemadera:autoform-pikaday@1.0.0
+lukemadera:dotenv-files@0.0.1
 lukemadera:social-share@1.2.0
 mdg:validation-error@0.2.0
 meteor@1.1.10
