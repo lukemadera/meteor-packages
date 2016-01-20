@@ -59,10 +59,36 @@ App.setPreference('StatusBarBackgroundColor', '#8E9599');
 // App.setPreference('deployment-target', '7.0'); // not sure if this works, according to phonegap, it should...
 
 //meteor local is supposed to be auto included but was not?
-App.accessRule('http://meteor.local/*');
+App.accessRule('*://meteor.local/*');
+App.accessRule('*://10.0.2.2/*');
 //environment specific (dev, prod) domains
-App.accessRule('http://lukemadera-packages.meteor.com/*');
+App.accessRule('*://lukemadera-packages.meteor.com/*');
+
 //google maps, places
 App.accessRule('https://maps.googleapis.com/*');
 App.accessRule('https://maps.gstatic.com/*');
 
+// Social sharing
+App.accessRule('*://*.facebook.com/*');
+App.accessRule('*://*.fbcdn.net/*');
+App.accessRule('*://*.gmail.com/*');
+App.accessRule('*://*.google.com/*');
+App.accessRule('*://*.linkedin.com/*');
+App.accessRule('*://*.pinterest.com/*');
+App.accessRule('*://*.twitter.com/*');
+
+// App.accessRule('mailto:*');
+// App.accessRule('sms:*');
+
+// Images
+App.accessRule('*://*/*.jpg');
+App.accessRule('*://*/*.png');
+
+// Video
+App.accessRule('*://*.youtube.com/*');
+App.accessRule('*://*.ytimg.com/*');
+App.accessRule('*://*.gstatic.com/*');
+App.accessRule('*://*.googlevideo.com/*');
+
+// Aamazon (S3)
+App.accessRule('*://*.amazonaws.com/*');
