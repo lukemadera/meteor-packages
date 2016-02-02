@@ -3,10 +3,12 @@ if(Meteor.isClient) {
     opts: function() {
       var opts ={
         // classes: {
-        //   btns: 'lm-image-picker-btn-style',
+        //   btns: '',
+        //   btn: 'lm-image-picker-btn-style',
         //   image: '',
         //   imageConverted: '',
-        //   imageCont: ''
+        //   imageCont: '',
+        //   saveBtn: ''
         // },
         // types: {
         //   upload: true,
@@ -23,6 +25,9 @@ if(Meteor.isClient) {
         // },
         // fileDir: '',
         // quality: '75',
+        // displayMax: {
+        //   height: '75%'
+        // }
         onImageSaved: function(err, base64Data) {
           console.log(err, base64Data);
         }

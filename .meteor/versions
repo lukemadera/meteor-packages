@@ -69,7 +69,7 @@ logging@1.0.8
 lukemadera:autoform-googleplace@1.0.7
 lukemadera:autoform-pikaday@1.0.0
 lukemadera:dotenv-files@1.0.1
-lukemadera:image-picker@0.0.1
+lukemadera:image-picker@0.0.8
 lukemadera:social-share@1.2.0
 lukemadera:video-capture@1.0.7
 mdg:camera@1.2.0
